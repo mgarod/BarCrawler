@@ -4,10 +4,16 @@ Given a location and a search term, we will make you a customizable tour of the 
 
 ## Contributors
 
-1. [Michael Garod](http://github.com/mgarod)
-  * Computer science tutor at Hunter College, former Summer Technology Analyst at Barclays, former research assistant for Professor Carsten Kessler at Hunter College
-  * [LinkedIn](http://linkedin.com/in/mgarod)
-2. [Igor Gluskin](http://github.com/igorgluskin)
-  * Computer Science student at Hunter College 
-3. [Richard Cibu](http://github.com/r1chc)
-  * Computer Science and Economics major at Hunter College
+[Michael Garod](http://github.com/mgarod) DevOps, Full Stack Engineer
+
+![alt text](https://github.com/mgarod/mgarod.github.io/blob/master/images/self.png)
+
+Michael has been working as a Computer science and tutor at Hunter College for 2 years, and has recently completed a summer with Barclays as a Technology Analyst. Before that, he was a research assistant for Professor Carsten Kessler at Hunter College studying Wikipedia's role in geography theory. Michael has a passion for databases and big data technologies, cloud computing with AWS, and the elegance of Python.
+
+[Igor Gluskin](http://github.com/igorgluskin)
+
+Computer Science student at Hunter College 
+
+[Richard Cibu](http://github.com/r1chc)
+
+Computer Science and Economics major at Hunter College
