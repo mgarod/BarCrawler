@@ -8,6 +8,6 @@ Given a location and a search term, we will make you a customizable tour of the 
   * Computer science tutor at Hunter College, former Summer Technology Analyst at Barclays, former research assistant for Professor Carsten Kessler at Hunter College
   * [LinkedIn](http://linkedin.com/in/mgarod)
 2. Igor Gluskin
-  * blurb
+  * Computer Science student at Hunter College 
 3. Richard Cibu
-  * blurb
+  * Computer Science and Economics major at Hunter College
