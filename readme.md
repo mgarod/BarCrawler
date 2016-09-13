@@ -18,4 +18,4 @@ Igor is an undergraduate student at Hunter College, studying Computer Science, w
 
 [Richard Cibu](http://github.com/r1chc)
 
-Computer Science and Economics major at Hunter College
+Hunter College student--double major in Computer Science and Economics; minor in Political Science. Interested in the fields of Network Security and Big Data Analysis. Currently working at Cravath, Swaine & Moore LLP in the IT department and is an avid soccer player in his spare time. 
