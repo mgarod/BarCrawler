@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BarCrawler</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- PureIO -->
+    <link href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+    <link href="css/agency.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">BarCrawler</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Crawl!</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome To BarCrawler</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="section-subheading text-muted">Please give us some info to help us find the best Crawl for you:</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <form class="pure-form pure-form-aligned">
+                        <fieldset>
+                            <div class="pure-control-group">
+                                <label for="max_D">Max distance from start</label>
+                                <input id="max_D" type="number" placeholder="meters">
+                            </div>
+
+                            <div class="pure-control-group">
+                                <label for="maxD">Max distance between bars</label>
+                                <input id="maxD" type="number" placeholder="meters">
+                            </div>
+
+                            <div class="pure-control-group">
+                                <label for="minR">Minimum Rating</label>
+                                <input id="minR" type="number" placeholder="0.0 - 10.0">
+                            </div>
+
+                            <div class="pure-control-group">
+                                <label for="more">More filters to come</label>
+                                <input id="more" type="text" placeholder="Suggestions welcome!!!">
+                            </div>
+
+                            <div class="pure-controls">
+                                <button type="submit" class="pure-button pure-button-primary">Find Bars</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="img/samplemap.JPG" height="546" width="730"/>
+                </div>
+            </div>
+           <!-- <div class="row text-center">
+                <a href="#services" class="page-scroll btn btn-xl">FIND YOUR BARS</a>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our Amazing Team</h2>
+                    <h3 class="section-subheading text-muted">-- Hunter College -- CS Capstone -- Fall 2016 --</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Igor Gluskin</h4>
+                        <p class="text-muted">Igor is an undergraduate student at Hunter College, studying Computer Science, with minors in mathematics and economics. He is interested
+                            in app development, and other mobile tech projects. He is also a ballroom dance instructor.</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="https://github.com/igorgluskin"><i class="fa fa-github"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/igor.gluskin.1"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/igluskin"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Michael Garod</h4>
+                        <p class="text-muted">Michael has been working as a Computer science and tutor at Hunter College for 2 years, and has recently completed a summer with
+                            Barclays as a Technology Analyst. Before that, he was a research assistant for Professor Carsten Kessler at Hunter College studying Wikipedia's role
+                            in geography theory. Michael has a passion for databases and big data technologies, cloud computing with AWS, and the elegance of Python.</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="https://github.com/mgarod"><i class="fa fa-github"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/mgarod"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/mgarod"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Richard Cibu</h4>
+                        <p class="text-muted">Hunter College student--double major in Computer Science and Economics; minor in Political Science. Interested in the fields of
+                            Network Security and Big Data Analysis. Currently working at Cravath, Swaine & Moore LLP in the IT department and is an avid soccer player in his spare time.</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="https://github.com/r1chc"><i class="fa fa-github"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; BarCrawler 2016</span>
+                </div>
+
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/agency.min.js"></script>
+
+</body>
+
+</html>
