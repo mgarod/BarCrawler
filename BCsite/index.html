@@ -34,10 +34,13 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzoCZfpK_tmJpTUXH6sd3xjl1FEYdmb68&callback=initMap"></script>
+
 </head>
 
 <body id="page-top" class="index">
-
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
@@ -80,13 +83,13 @@
     <!-- Services Section -->
     <section id="services">
         <div class="container">
-            <div class="row">
+            <div class="row" align="center">
                 <div class="col-md-12 text-center">
                     <h3 class="section-subheading text-muted">Please give us some info to help us find the best Crawl for you:</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 text-center">
+                <div class="col-md-12 text-center" align="center">
                     <form class="pure-form pure-form-aligned">
                         <fieldset>
                             <div class="pure-control-group">
@@ -115,8 +118,10 @@
                         </fieldset>
                     </form>
                 </div>
-                <div class="col-md-6 text-center">
-                    <img src="img/samplemap.JPG" height="546" width="730"/>
+            </div>
+            <div class="row" align="center">
+                <div id="map" align="center" style="height:600px; width:90%;">
+                    initMap();
                 </div>
             </div>
            <!-- <div class="row text-center">
@@ -223,6 +228,9 @@
 
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
+
+    <!-- Homemade Javascript -->
+    <script src="js/googlemaps.js"></script>    
 
 </body>
 
