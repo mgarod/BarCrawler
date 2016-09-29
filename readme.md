@@ -19,3 +19,45 @@ Igor is an undergraduate student at Hunter College, studying Computer Science, w
 [Richard Cibu](http://github.com/r1chc)
 
 Hunter College student--double major in Computer Science and Economics; minor in Political Science. Interested in the fields of Network Security and Big Data Analysis. Currently working at Cravath, Swaine & Moore LLP in the IT department and is an avid soccer player in his spare time. 
+
+## API
+
+#### GET Generate Crawl
+Parameters: topic, location, and number of stops.
+Return: JSON. All strings are unicode
+```
+{
+  'venue1name': {
+        "verified"      : boolean
+        "lat"           : float latitude
+        "lng"           : float longitude
+        "rating"        : float (out of 10)
+        "ratingSignals" : integer
+        "address": {
+          "streetNumber"  : string (e.g. '123 Fake St.')
+          "city"          : string (e.g. 'New York')
+          "state"         : string (e.g. 'NY')
+          "postalCode"    : string (e.g. '10036')
+          "country"       : string (e.g. 'United States')
+          "cc"            : string (e.g. 'US')
+        }
+        "formattedAddress" : [
+          string StreetNameNumber,
+          string CityStateZip,
+          string Country
+        ]
+        "price"          : integer ([1,2,3,4])
+        "isOpen"         : boolean
+        "foursquareUrl"  : string URL
+        "phone"          : string
+        "formattedPhone" : string
+        "twitter"        : string URL
+        "facebookUrl"    : string URL
+        "menuUrl"        : string URL
+        "menuMobileUrl"  : string URL
+  }
+  'venue2name': ...
+  ...
+  'venueNname': ...
+}
+```
