@@ -1,13 +1,14 @@
 function testgeneratecrawl() {
   var apigClient = apigClientFactory.newClient()
 
-  var params = {
+// -- THIS PORTION IS HANDLED IN THE INDEX.HTML FILE ---
+//  var params = {
   // This is where any modeled request parameters should be added. 
   // The key is the parameter name, as it is defined in the API in API Gateway.
-    'topic': 'nightlife',
-    'location': 'east village',
-    'stops': 5
-  };
+//    'topic': 'nightlife',
+//    'location': 'east village',
+//    'stops': 5
+//  };
 
   var body = {
     // This is where you define the body of the request

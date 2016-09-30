@@ -92,28 +92,28 @@
                 <div class="col-md-12 text-center" align="center">
                     <form class="pure-form pure-form-aligned">
                         <fieldset>
-                            <div class="pure-control-group">
-                                <label for="max_D">Max distance from start</label>
-                                <input id="max_D" type="number" placeholder="meters">
+                           <div class="pure-control-group">
+                                <label for="top">Topic</label>
+                                <input id="top" type="text" placeholder="e.g. Irish bar/Tacos">
                             </div>
 
                             <div class="pure-control-group">
-                                <label for="maxD">Max distance between bars</label>
-                                <input id="maxD" type="number" placeholder="meters">
+                                <label for="loc">Location</label>
+                                <input id="loc" type="text" placeholder="Where are you?">
                             </div>
 
                             <div class="pure-control-group">
-                                <label for="minR">Minimum Rating</label>
-                                <input id="minR" type="number" placeholder="0.0 - 10.0">
-                            </div>
-
-                            <div class="pure-control-group">
-                                <label for="more">More filters to come</label>
-                                <input id="more" type="text" placeholder="Suggestions welcome!!!">
+                                <label for="sto">Number of stops</label>
+                                <input id="sto" type="number" placeholder="Is 12 bars too many?">
                             </div>
 
                             <div class="pure-controls">
-                                <button type="submit" class="pure-button pure-button-primary">Find Bars</button>
+                                <button type="button" class="pure-button pure-button-primary" onclick="testgeneratecrawl(params={
+                                    'topic': top.value,
+                                    'location': loc.value, 
+                                    'stops': sto.value
+
+                                    })">Find Bars</button>
                             </div>
                         </fieldset>
                     </form>
