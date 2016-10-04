@@ -1,14 +1,16 @@
-function testgeneratecrawl() {
-  var apigClient = apigClientFactory.newClient()
+function testgeneratecrawl(params) {
+  var apigClient = apigClientFactory.newClient({
+    apiKey: 'cRokobNRQi7UpOpIB1Ns978IXIEfHN1J2Gz8V1Vd'
+  });
 
 // -- THIS PORTION IS HANDLED IN THE INDEX.HTML FILE ---
-//  var params = {
+ var params = {
   // This is where any modeled request parameters should be added. 
   // The key is the parameter name, as it is defined in the API in API Gateway.
-//    'topic': 'nightlife',
-//    'location': 'east village',
-//    'stops': 5
-//  };
+   'topic': 'nightlife',
+   'location': 'east village',
+   'stops': 5
+ };
 
   var body = {
     // This is where you define the body of the request
@@ -27,11 +29,9 @@ function testgeneratecrawl() {
     .then(function(result){
       // Add success callback code here.
       console.log(result.data)
-      alert("generatecrawl success");
       response = result.data
     }).catch(function(result){
       // Add error callback code here.
-      // console.log(result)
-      alert("error");
+      console.log("error")
   });
 };
