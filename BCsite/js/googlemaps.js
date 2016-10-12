@@ -5,22 +5,34 @@ function initMap() {
   var directionsDisplay = new google.maps.DirectionsRenderer;
 
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 6,
-    center: {lat: 41.85, lng: -87.65},
+    zoom: 12,
+    center: {lat: 40.744194, lng: -73.994052},
   });
 
   directionsDisplay.setMap(map);
-  /*
-    read in from HTML file produced from Python file
-  */
-  var locations = [
-    {title: 'A', location: {lat: 40.7713024, lng: -73.9632393}},
-    {title: 'B', location: {lat: 40.7444883, lng: -73.9949465}},
-    {title: 'C', location: {lat: 40.7347062, lng: -73.9895759}},
-    {title: 'D', location: {lat: 40.7281777, lng: -73.984377}},
-    {title: 'E', location: {lat: 40.7195264, lng: -74.0089934}},
-    {title: 'F', location: {lat: 40.7180628, lng: -73.9961237}}
-  ];
+}
+
+function initMap2() {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: {lat: 40.744194, lng: -73.994052},
+  });
+
+  directionsDisplay.setMap(map);
+
+  var locations = []; //Empty Array which will later contain location objects consisting of a Title & Location (in latitude and longitude coordinates)
+
+  var venue_name = Object.keys(response); //This variable is an array of all of the keys in Response--essentially each venue object in Response
+  venue_name.forEach(function(venue) {
+    var title = venue_name[i]; //response[venue] will give title everything of venue's information starting with address, formatted address etc...
+    var locationlat = response[venue].lat;
+    var locationlng = response[venue].lng;
+    var obj = {title: title, location: {lat: locationlat, lng: locationlng}} //creates an object representing each object in Response
+    locations.push(obj); //pushes to locations array
+  });
 
   // The following group uses the location array to create an array of markers on initialize.
   for (var i = 0; i < locations.length; i++) {
@@ -32,6 +44,7 @@ function initMap() {
   }
   calculateAndDisplayRoute(directionsService, directionsDisplay);
 }
+
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var waypts = [];

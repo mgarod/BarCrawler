@@ -30,6 +30,7 @@ function testgeneratecrawl(params) {
       // Add success callback code here.
       console.log(result.data)
       response = result.data
+      initMap2();
     }).catch(function(result){
       // Add error callback code here.
       console.log("error")
