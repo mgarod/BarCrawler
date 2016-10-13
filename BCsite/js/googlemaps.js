@@ -25,14 +25,13 @@ function initMap2() {
 
   var locations = []; //Empty Array which will later contain location objects consisting of a Title & Location (in latitude and longitude coordinates)
 
-  var venue_name = Object.keys(response); //This variable is an array of all of the keys in Response--essentially each venue object in Response
-  venue_name.forEach(function(venue) {
-    var title = venue_name[i]; //response[venue] will give title everything of venue's information starting with address, formatted address etc...
-    var locationlat = response[venue].lat;
-    var locationlng = response[venue].lng;
+  for (var name in response) {
+    var title = name; //response[venue] will give title everything of venue's information starting with address, formatted address etc...
+    var locationlat = response[name]["lat"];
+    var locationlng = response[name]["lng"];
     var obj = {title: title, location: {lat: locationlat, lng: locationlng}} //creates an object representing each object in Response
     locations.push(obj); //pushes to locations array
-  });
+  }
 
   // The following group uses the location array to create an array of markers on initialize.
   for (var i = 0; i < locations.length; i++) {
@@ -58,6 +57,9 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var origin = test[0].position;
   var destination = test[test.length - 1].position;
 
+  console.log(origin);
+  console.log(destination);
+  
   directionsService.route({
     origin: origin,
     destination: destination,
