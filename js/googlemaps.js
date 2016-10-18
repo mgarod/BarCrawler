@@ -92,7 +92,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     if (status === 'OK') {
       directionsDisplay.setDirections(response);
       var route = response.routes[0];
-      document.getElementById("map").style.visibility = "display";
     } else {
       window.alert('Directions request failed due to ' + status);
     }
