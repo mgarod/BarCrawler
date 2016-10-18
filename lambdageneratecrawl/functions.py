@@ -4,6 +4,8 @@ import random
 from math import sqrt
 from math import e as eulers
 from geopy.distance import vincenty
+from hashlib import md5
+from numpy import base_repr
 
 import pprint
 pp = pprint.PrettyPrinter(indent=1, depth=2)
@@ -12,12 +14,26 @@ def get_crawl(topic, location, stops):
     """
     Called from main.py
     """
-    return get_venue_list(topic, location, int(stops))
+    venue_list = get_venue_list(topic, location, int(stops))
+    unique_id = make_unique_id(venue_list)
+    return {'unique_id': unique_id, 'venues': venue_list}
 
+def make_unique_id(venue_list):
+    """
+    Make a base-36 string based on the hash of all venue names.
+
+    Return only the last 8 characters fo the base-36 string.
+    """
+    md5_hash = md5()
+    for name in venue_list:
+        md5_hash.update(name)
+    hash_int = int(md5_hash.hexdigest(), 16)
+    base36_num = base_repr(hash_int, 36)[-8:]
+    return base36_num
 
 def score(cur_ven, ven):
     """
-    This is the algorithm. Get the score between these two venues
+    This is the algorithm. Get the score between these two venues.
     """
     try:
         alpha = 500
@@ -84,6 +100,7 @@ def make_venue_object(l):
         name = l["name"]
     except:
         print "some location has no name"
+        print l
         raise KeyError("FATAL ERROR: some venue has no name")
 
     try:
