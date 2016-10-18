@@ -84,9 +84,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
     origin: origin,
     destination: destination,
+    travelMode: 'WALKING',
     waypoints: waypts,
-    optimizeWaypoints: true,  //solves traveling salesman problem
-    travelMode: 'WALKING'
+    optimizeWaypoints: true  //solves traveling salesman problem
+
   }, function(response, status) {
     if (status === 'OK') {
       directionsDisplay.setDirections(response);
