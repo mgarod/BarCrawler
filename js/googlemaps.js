@@ -63,6 +63,7 @@ function initMap2() {
     });
   }
   calculateAndDisplayRoute(directionsService, directionsDisplay);
+  document.getElementById("map").style.visibility = "display";
 }
 
 
