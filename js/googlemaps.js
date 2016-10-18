@@ -87,6 +87,7 @@ function initMap2() {
     });
   }
   calculateAndDisplayRoute(directionsService, directionsDisplay, test);
+  document.getElementById("map").style.visibility = "display";
 }
 
 
