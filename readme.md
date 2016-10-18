@@ -27,37 +27,40 @@ Parameters: topic, location, and number of stops.
 Return: JSON. All strings are unicode
 ```
 {
-  'venue1name': {
-        "verified"      : boolean
-        "lat"           : float latitude
-        "lng"           : float longitude
-        "rating"        : float (out of 10)
-        "ratingSignals" : integer
-        "address": {
-          "streetNumber"  : string (e.g. '123 Fake St.')
-          "city"          : string (e.g. 'New York')
-          "state"         : string (e.g. 'NY')
-          "postalCode"    : string (e.g. '10036')
-          "country"       : string (e.g. 'United States')
-          "cc"            : string (e.g. 'US')
-        }
-        "formattedAddress" : [
-          string StreetNameNumber,
-          string CityStateZip,
-          string Country
-        ]
-        "price"          : integer ([1,2,3,4])
-        "isOpen"         : boolean
-        "foursquareUrl"  : string URL
-        "phone"          : string
-        "formattedPhone" : string
-        "twitter"        : string URL
-        "facebookUrl"    : string URL
-        "menuUrl"        : string URL
-        "menuMobileUrl"  : string URL
+  "unique_id": string (8-digit hexadecimal),
+  "venues" : {
+    'venue1name': {
+          "verified"      : boolean
+          "lat"           : float latitude
+          "lng"           : float longitude
+          "rating"        : float (out of 10)
+          "ratingSignals" : integer
+          "address": {
+            "streetNumber"  : string (e.g. '123 Fake St.')
+            "city"          : string (e.g. 'New York')
+            "state"         : string (e.g. 'NY')
+            "postalCode"    : string (e.g. '10036')
+            "country"       : string (e.g. 'United States')
+            "cc"            : string (e.g. 'US')
+          }
+          "formattedAddress" : [
+            string StreetNameNumber,
+            string CityStateZip,
+            string Country
+          ]
+          "price"          : integer ([1,2,3,4])
+          "isOpen"         : boolean
+          "foursquareUrl"  : string URL
+          "phone"          : string
+          "formattedPhone" : string
+          "twitter"        : string URL
+          "facebookUrl"    : string URL
+          "menuUrl"        : string URL
+          "menuMobileUrl"  : string URL
+    }
+    'venue2name': ...
+    ...
+    'venueNname': ...
   }
-  'venue2name': ...
-  ...
-  'venueNname': ...
 }
 ```
