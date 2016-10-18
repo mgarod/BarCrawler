@@ -1,63 +1,37 @@
-# BarCrawler
+# [Start Bootstrap](http://startbootstrap.com/) - [Agency](http://startbootstrap.com/template-overviews/agency/)
 
-Given a location and a search term, we will make you a customizable tour of the neighborhood to find the hottest spots.
+[Agency](http://startbootstrap.com/template-overviews/agency/) is a one page agency portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a responsive timeline, and a working PHP contact form.
 
-## Contributors
+## Getting Started
 
-[Michael Garod](http://github.com/mgarod) DevOps, Full Stack Engineer
+Several options are available to get started quickly:
+* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/agency/)
+* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-agency.git`
+* Fork the repo
 
-![alt text](https://github.com/mgarod/mgarod.github.io/blob/master/images/self.png)
+## Developing Using Source Files
 
-Michael has been working as a Computer science and tutor at Hunter College for 2 years, and has recently completed a summer with Barclays as a Technology Analyst. Before that, he was a research assistant for Professor Carsten Kessler at Hunter College studying Wikipedia's role in geography theory. Michael has a passion for databases and big data technologies, cloud computing with AWS, and the elegance of Python.
+To use the source files, you will need to have npm installed globally along with Gulp.js. To start:
+* Run `npm install` in the root directory
+* Run `gulp dev` and edit the files as needed
 
-[Igor Gluskin](http://github.com/igorgluskin)
+If you need to update the plugins included with this template, simply run the following tasks:
+* First run `npm update` to update the dependencies
+* Then run `gulp copy` to copy the new versions to their proper destinations
 
-![alt text](https://avatars0.githubusercontent.com/u/22086293?v=3&s=460)
+## Bugs and Issues
 
-Igor is an undergraduate student at Hunter College, studying Computer Science, with minors in mathematics and economics. He is interested in app development, and other mobile tech projects. He is also a ballroom dance instructor. 
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-agency/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/agency/).
 
-[Richard Cibu](http://github.com/r1chc)
+## Creator
 
-Hunter College student--double major in Computer Science and Economics; minor in Political Science. Interested in the fields of Network Security and Big Data Analysis. Currently working at Cravath, Swaine & Moore LLP in the IT department and is an avid soccer player in his spare time. 
+Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
 
-## API
+* https://twitter.com/davidmillerskt
+* https://github.com/davidtmiller
 
-#### GET Generate Crawl
-Parameters: topic, location, and number of stops.
-Return: JSON. All strings are unicode
-```
-{
-  'venue1name': {
-        "verified"      : boolean
-        "lat"           : float latitude
-        "lng"           : float longitude
-        "rating"        : float (out of 10)
-        "ratingSignals" : integer
-        "address": {
-          "streetNumber"  : string (e.g. '123 Fake St.')
-          "city"          : string (e.g. 'New York')
-          "state"         : string (e.g. 'NY')
-          "postalCode"    : string (e.g. '10036')
-          "country"       : string (e.g. 'United States')
-          "cc"            : string (e.g. 'US')
-        }
-        "formattedAddress" : [
-          string StreetNameNumber,
-          string CityStateZip,
-          string Country
-        ]
-        "price"          : integer ([1,2,3,4])
-        "isOpen"         : boolean
-        "foursquareUrl"  : string URL
-        "phone"          : string
-        "formattedPhone" : string
-        "twitter"        : string URL
-        "facebookUrl"    : string URL
-        "menuUrl"        : string URL
-        "menuMobileUrl"  : string URL
-  }
-  'venue2name': ...
-  ...
-  'venueNname': ...
-}
-```
+Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+
+## Copyright and License
+
+Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-agency/blob/gh-pages/LICENSE) license.
