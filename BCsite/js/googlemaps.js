@@ -8,8 +8,8 @@ function initMap() {
   var infoWindow = new google.maps.InfoWindow({map: map});
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
+    navigator.geolocation.watchPosition(function(position) { //can do "navigator.geolocation.getCurrentPosition(function(position) { " instead and use getcurrentPosition rather than watchPosition 
+      pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
@@ -25,6 +25,29 @@ function initMap() {
     handleLocationError(false, infoWindow, map.getCenter());
   }
 }
+
+/*
+var destinations = [];
+for (var i = 0; i < test.length; i++) {
+destinations[i] = test[i].position;
+}
+
+var service = new google.maps.DistanceMatrixService;
+service.getDistanceMatrix({
+	origins: pos;
+	destinations: destinations,
+	travelMode: 'WALKING',
+	unitSystem: google.maps.UnitSystem.IMPERIAL,
+}, function(response, status) {
+	if (status !== google.maps.DistanceMatrixStatus.OK) {
+		window.alert('Error was: ' + status);
+    } else {
+    	calculateDistance(response);
+    }
+});
+
+function calculateDistance(response) {
+*/
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
@@ -46,12 +69,14 @@ function initMap2() {
 
   var locations = []; //Empty Array which will later contain location objects consisting of a Title & Location (in latitude and longitude coordinates)
 
-  for (var name in response) {
+  for (var name in response["venues"]) {
+  	if (response["venues"].hasOwnProperty(name)) {
     var title = name; //response[venue] will give title everything of venue's information starting with address, formatted address etc...
-    var locationlat = response[name]["lat"];
-    var locationlng = response[name]["lng"];
+    var locationlat = response["venues"][name]["lat"];
+    var locationlng = response["venues"][name]["lng"];
     var obj = {title: title, location: {lat: locationlat, lng: locationlng}} //creates an object representing each object in Response
     locations.push(obj); //pushes to locations array
+   }
   }
 
   // The following group uses the location array to create an array of markers on initialize.
@@ -78,6 +103,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var origin = test[0].position;
   var destination = test[test.length - 1].position;
 
+  console.log(pos);
   console.log(origin);
   console.log(destination);
 
@@ -86,9 +112,9 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     destination: destination,
     waypoints: waypts,
     optimizeWaypoints: true,  //solves traveling salesman problem
-    travelMode: 'WALKING'
+    travelMode: google.maps.TravelMode.WALKING
   }, function(response, status) {
-    if (status === 'OK') {
+    if (status === google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
       var route = response.routes[0];
     } else {
