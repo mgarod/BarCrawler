@@ -1,5 +1,3 @@
-var test = [];
-
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
@@ -52,11 +50,12 @@ function calculateDistance(response) {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
+                        'Error: We would like to use your location as the starting point of your crawl. Please reload page and allow location services' :
                         'Error: Your browser doesn\'t support geolocation.');
 }
 
 function initMap2() {
+  var test = [];
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
 
@@ -87,11 +86,11 @@ function initMap2() {
       name: locations[i].title
     });
   }
-  calculateAndDisplayRoute(directionsService, directionsDisplay);
+  calculateAndDisplayRoute(directionsService, directionsDisplay, test);
 }
 
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+function calculateAndDisplayRoute(directionsService, directionsDisplay, test) {
   var waypts = [];
   for (var i = 1; i < test.length - 1; i++) {
       waypts.push({
