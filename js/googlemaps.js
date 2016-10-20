@@ -1,9 +1,9 @@
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  /*var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
     center: {lat: 40.744194, lng: -73.994052},
   });
-  var infoWindow = new google.maps.InfoWindow({map: map});
+  var infoWindow = new google.maps.InfoWindow({map: map}); */
 }
 
 /*
@@ -69,7 +69,6 @@ function initMap2() {
     });
   }
   calculateAndDisplayRoute(directionsService, directionsDisplay, test);
-  document.getElementById("map").style.visibility = "display";
 }
 
 
