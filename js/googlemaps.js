@@ -4,24 +4,6 @@ function initMap() {
     center: {lat: 40.744194, lng: -73.994052},
   });
   var infoWindow = new google.maps.InfoWindow({map: map});
-  // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(function(position) { //can do "navigator.geolocation.getCurrentPosition(function(position) { " instead and use getcurrentPosition rather than watchPosition 
-      pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
 }
 
 /*
@@ -103,9 +85,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, test) {
   var origin = test[0].position;
   var destination = test[test.length - 1].position;
 
-  console.log(pos);
-  console.log(origin);
-  console.log(destination);
+  console.log("origin: ", origin);
+  console.log("destination: ", destination);
 
   directionsService.route({
     origin: origin,
