@@ -1,5 +1,7 @@
 # BarCrawler
 
+[Website](http://barcrawler.com.s3-website-us-east-1.amazonaws.com)
+
 Given a location and a search term, we will make you a customizable tour of the neighborhood to find the hottest spots.
 
 ## Contributors
