@@ -105,7 +105,7 @@
                             </div>
 
                             <div class="pure-controls">
-                                <button type="button" class="pure-button pure-button-primary" onclick="testgeneratecrawl(
+                                <button type="button" class="pure-button pure-button-primary" onclick="generateCrawl(
                                 {'topic': top.value,
                                  'location': loc.value, 
                                  'stops': sto.value})">Find Bars</button>

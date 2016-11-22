@@ -1,7 +1,8 @@
-function testgeneratecrawl(params) {
+function generateCrawl(params) {
   var apigClient = apigClientFactory.newClient({
     apiKey: 'cRokobNRQi7UpOpIB1Ns978IXIEfHN1J2Gz8V1Vd'
   });
+  console.log("generateCrawl is sending:")
   console.log(params)
 // -- THIS PORTION IS HANDLED IN THE INDEX.HTML FILE ---
  // var params = {
@@ -30,9 +31,11 @@ function testgeneratecrawl(params) {
       // Add success callback code here.
       response = result.data;
       console.log("testgeneratecrawl response: ", response)
+      console.log(response)
       initMap2();
     }).catch(function(result){
       // Add error callback code here.
-      console.log("Error in the generatecrawl API call");
+      console.log("generatecrawl caught an exception:", result);
+      console.log(result);
   });
 };

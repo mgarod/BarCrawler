@@ -34,7 +34,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyDEw5OYIuvoLQP3WCGlGCaRcjAuJSg1MYA&v=3&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&key=AIzaSyDEw5OYIuvoLQP3WCGlGCaRcjAuJSg1MYA&v=3"></script>
 </head>
 
 <body id="page-top" class="index">
@@ -105,7 +105,7 @@
                             </div>
 
                             <div class="pure-controls">
-                                <button type="button" class="pure-button pure-button-primary" onclick="testgeneratecrawl(
+                                <button type="button" class="pure-button pure-button-primary" onclick="generateCrawl(
                                 {'topic': top.value,
                                  'location': loc.value, 
                                  'stops': sto.value})">Find Bars</button>
