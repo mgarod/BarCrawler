@@ -87,32 +87,34 @@
             </div>
             <div class="row">
                 <div class="col-md-12 text-center" align="center">
-                    <form class="pure-form pure-form-aligned">
+                    <form class="pure-form pure-form-aligned" action="submit" method="post">
                         <fieldset>
                            <div class="pure-control-group">
                                 <label for="top">Topic</label>
-                                <input id="top" type="text" placeholder="e.g. Irish bar/Tacos">
+                                <input id="top" name="top" type="text" placeholder="Nightlife, Tacos, etc." required>
                             </div>
 
                             <div class="pure-control-group">
                                 <label for="loc">Location</label>
-                                <input id="loc" type="text" placeholder="Where are you?">
+                                <input id="loc" name="loc" type="text" placeholder="Where?" required>
                             </div>
 
                             <div class="pure-control-group">
-                                <label for="sto">Number of stops</label>
-                                <input id="sto" type="number" placeholder="Is 12 bars too many?">
+                                <label for="sto">Number of Stops</label>
+                                <input id="sto" name="sto" type="number" placeholder="How many? (12 max)" required>
                             </div>
 
                             <div class="pure-controls">
                                 <button type="button" class="pure-button pure-button-primary" onclick="generateCrawl(
                                 {'topic': top.value,
                                  'location': loc.value, 
-                                 'stops': sto.value})">Find Bars</button>
+                                 'stops': sto.value})">Find (Static)</button>
+                                <input type="submit" class="pure-button pure-button-primary" name="submit" value="Find (Node/Express)">
                             </div>
+                            
                         </fieldset>
                     </form>
-                    <h3 class="section-subheading text-muted">Code: {{hash}}</h3>
+                    <h3 class="section-subheading text-muted">Code: {{unique_id}}</h3>
                 </div>
             </div>
             <div class="row" align="center">
