@@ -34,6 +34,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="https://cdn.klokantech.com/maptilerlayer/v1/index.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&key=AIzaSyDEw5OYIuvoLQP3WCGlGCaRcjAuJSg1MYA&v=3"></script>
 
 </head>

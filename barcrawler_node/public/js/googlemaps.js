@@ -14,6 +14,9 @@ function initMap2(response) {
 
   directionsDisplay.setMap(map);
 
+  var mapMaxZoom = 18;
+  var geoloccontrol = new klokantech.GeolocationControl(map, mapMaxZoom);
+
   var locations = []; //Empty Array which will later contain location objects consisting of a Title & Location (in latitude and longitude coordinates)
   var largeInfowindow = new google.maps.InfoWindow();
   var bounds = new google.maps.LatLngBounds();
