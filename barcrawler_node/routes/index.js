@@ -30,7 +30,11 @@ router.post('/submit', function(req, res, next) {
       response = result.data;
       console.log("generateCrawl response: ");
       console.log(response);
-      res.render('index', { response : response, unique_id : response.unique_id });
+      res.render('index', {
+        response : JSON.stringify(response),
+        venues: response.venues,
+        unique_id : response.unique_id
+      });
     }).catch(function(result) { // failure
       console.log("generateCrawl caught an exception:");
       console.log(result);

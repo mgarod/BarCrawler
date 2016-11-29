@@ -1,4 +1,4 @@
-function initMap2() {
+function initMap2(response) {
   var markers = [];
   var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var labelIndex = 0;

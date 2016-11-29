@@ -35,9 +35,10 @@
     <![endif]-->
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&key=AIzaSyDEw5OYIuvoLQP3WCGlGCaRcjAuJSg1MYA&v=3"></script>
+
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" onload="initMap2({{response}})">
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
