@@ -32,7 +32,6 @@ router.post('/submit', function(req, res, next) {
       console.log(response);
       res.render('index', {
         response : JSON.stringify(response),
-        venues: response.venues,
         unique_id : response.unique_id
       });
     }).catch(function(result) { // failure
@@ -44,7 +43,11 @@ router.post('/submit', function(req, res, next) {
 
 router.get('/:id', function(req, res, next) {
   var id = req.params.id;
-  res.render('index', { unique_id : id});
+
+  res.render('index', {
+    response : JSON.stringify(response)
+    unique_id : id,
+  });
 });
 
 module.exports = router;
