@@ -1,6 +1,7 @@
-from keys import FSCLIENTKEY, FSSECRETKEY
+from keys import FSCLIENTKEY, FSSECRETKEY, MLABURI
 import foursquare
 import random
+from pymongo import MongoClient
 from math import sqrt
 from math import e as eulers
 from geopy.distance import vincenty
@@ -10,12 +11,30 @@ from hashlib import md5
 import pprint
 pp = pprint.PrettyPrinter(indent=1, depth=2)
 
+mlab_uri = MLABURI
+client = MongoClient(mlab_uri,
+                     connectTimeoutMS=30000,
+                     socketTimeoutMS=None,
+                     socketKeepAlive=True)
+db = client.crawlsdb
+crawls = db.crawls
+
 def get_crawl(topic, location, stops):
     """
     Called from main.py
     """
     venue_list = get_venue_list(topic, location, int(stops))
     unique_id = make_unique_id(venue_list)
+    
+    crawls.delete_one({'id': unique_id})
+    crawls.insert({
+        'id': unique_id,
+        'topic': topic,
+        'location': location,
+        'stops': stops,
+        'venues': venue_list,
+    }, check_keys=False)
+
     return {'unique_id': unique_id, 'venues': venue_list}
 
 def make_unique_id(venue_list):

@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var apigClientFactory = require('aws-api-gateway-client')
+var apigClientFactory = require('aws-api-gateway-client');
+var mongoose = require('mongoose');
+var Crawl = require('../models/Crawl');
+
 
 var apigClient = apigClientFactory.newClient({
   invokeUrl: 'https://l6l6cm3bfi.execute-api.us-east-1.amazonaws.com/prod',
@@ -44,10 +47,19 @@ router.post('/submit', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
   var id = req.params.id;
 
-  res.render('index', {
-    response : JSON.stringify(response)
-    unique_id : id,
+  Crawl.findOne({'id': id}, function(err, crawl){
+    console.log(JSON.stringify(crawl));
+
+    res.render('index', {
+      response : JSON.stringify(crawl),
+      unique_id : id
+    });
   });
+
+  // res.render('index', {
+  //   response : JSON.stringify(response),
+  //   unique_id : id
+  // });
 });
 
 module.exports = router;
