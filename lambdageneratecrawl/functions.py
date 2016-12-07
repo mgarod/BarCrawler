@@ -6,7 +6,6 @@ from math import sqrt
 from math import e as eulers
 from geopy.distance import vincenty
 from hashlib import md5
-# from numpy import base_repr
 
 import pprint
 pp = pprint.PrettyPrinter(indent=1, depth=2)
@@ -32,7 +31,7 @@ def get_crawl(topic, location, stops):
         'topic': topic,
         'location': location,
         'stops': stops,
-        'venues': venue_list,
+        'venues': venue_list
     }, check_keys=False)
 
     return {'unique_id': unique_id, 'venues': venue_list}
@@ -46,7 +45,6 @@ def make_unique_id(venue_list):
     for name in venue_list:
         md5_hash.update(name)
     hash_hex = md5_hash.hexdigest()
-    # base36_num = base_repr(hash_int, 36)[-8:]
     return hash_hex[-8:]
 
 def score(cur_ven, ven):
@@ -54,7 +52,7 @@ def score(cur_ven, ven):
     This is the algorithm. Get the score between these two venues.
     """
     try:
-        alpha = 500
+        alpha = 750
         numerator = (ven["rating"] * 0.75) + (2.5 * (1- eulers**(-ven["ratingSignals"]/144)))
         cur_coord = (cur_ven["location"]["lat"], cur_ven["location"]["lng"])
         ven_coord = (ven["location"]["lat"], ven["location"]["lng"])
@@ -77,8 +75,6 @@ def get_venue_list(tops, loc, stops):
     # Randomly choose the first location
     locs = []
     current_venue = random.choice(response["groups"][0]["items"])
-    # If venue is not verified, remove it and pick another
-    # TODO
 
     response["groups"][0]["items"].remove(current_venue)
     current_venue = current_venue["venue"]
@@ -155,7 +151,7 @@ def make_venue_object(l):
         venue["address"]["country"]      = l["location"]["country"]
         venue["address"]["cc"]           = l["location"]["cc"]
     except:
-        print pp.pprint(l)
+        # print pp.pprint(l)
         print name + " has error in address"
 
     try:
