@@ -12,7 +12,6 @@ var db = mongoose.connection;
 
 // Routes
 var routes = require('./routes/index');
-var codes = require('./routes/code');
 
 // Initialize App
 var app = express();
@@ -30,7 +29,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/code', codes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

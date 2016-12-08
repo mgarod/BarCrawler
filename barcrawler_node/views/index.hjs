@@ -93,25 +93,28 @@
                         <fieldset>
                            <div class="pure-control-group">
                                 <label for="top">Topic</label>
-                                <input id="top" name="top" type="text" placeholder="Nightlife, Tacos, etc." required>
+                                <input id="top" name="top" type="text" placeholder="Nightlife, Tacos, etc." value="{{topic}}" required>
                             </div>
 
                             <div class="pure-control-group">
                                 <label for="loc">Location</label>
-                                <input id="loc" name="loc" type="text" placeholder="Where?" required>
+                                <input id="loc" name="loc" type="text" placeholder="Where?" value="{{location}}"required>
                             </div>
 
                             <div class="pure-control-group">
                                 <label for="sto">Number of Stops</label>
-                                <input id="sto" name="sto" type="number" placeholder="How many? (12 max)" required>
+                                <input id="sto" name="sto" type="number" placeholder="How many? (12 max)" value="{{stops}}" required>
                             </div>
 
                             <div class="pure-controls">
+                                <!-- Static Button
                                 <button type="button" class="pure-button pure-button-primary" onclick="generateCrawl(
                                 {'topic': top.value,
                                  'location': loc.value, 
                                  'stops': sto.value})">Find (Static)</button>
-                                <input type="submit" class="pure-button pure-button-primary" name="submit" value="Find (Node/Express)">
+                                -->
+                                <!--Node/Express button-->
+                                <input type="submit" class="pure-button pure-button-primary" name="submit" value="Find">
                             </div>
                             
                         </fieldset>

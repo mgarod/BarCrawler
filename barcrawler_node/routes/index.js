@@ -4,7 +4,6 @@ var apigClientFactory = require('aws-api-gateway-client');
 var mongoose = require('mongoose');
 var Crawl = require('../models/Crawl');
 
-
 var apigClient = apigClientFactory.newClient({
   invokeUrl: 'https://l6l6cm3bfi.execute-api.us-east-1.amazonaws.com/prod',
   apiKey: 'cRokobNRQi7UpOpIB1Ns978IXIEfHN1J2Gz8V1Vd'
@@ -23,7 +22,7 @@ router.post('/submit', function(req, res, next) {
    'location': req.body.loc,
    'stops': req.body.sto
   };
-  console.log("params: ", params);
+  // console.log("params: ", params);
   
   var pathTemplate = '/generatecrawl';
   var method = 'GET';
@@ -31,15 +30,16 @@ router.post('/submit', function(req, res, next) {
   apigClient.invokeApi(params, pathTemplate, method)
     .then(function(result) { // success
       response = result.data;
-      console.log("generateCrawl response: ");
-      console.log(response);
+      // console.log("generateCrawl response:", response);
       res.render('index', {
         response : JSON.stringify(response),
+        topic: response.topic,
+        location: response.location,
+        stops: parseInt(response.stops),
         unique_id : response.unique_id
       });
-    }).catch(function(result) { // failure
-      console.log("generateCrawl caught an exception:");
-      console.log(result);
+    }).catch(function(err) { // failure
+      console.log("generateCrawl caught an exception:", err);
   });
 });
 
@@ -48,18 +48,25 @@ router.get('/:id', function(req, res, next) {
   var id = req.params.id;
 
   Crawl.findOne({'id': id}, function(err, crawl){
-    console.log(JSON.stringify(crawl));
+    if (err) {
+      console.log("ERROR:", err);
+      return;
+    } else {
+      // console.log("CRAWL:", crawl);
+      // console.log("CRAWL.TOPIC", crawl.topic);
+      // console.log("CRAWL.LOCATION", crawl.location);
+      // console.log("CRAWL.STOPS", crawl.stops);
+      // console.log("CRAWL.id", crawl.id);
 
-    res.render('index', {
-      response : JSON.stringify(crawl),
-      unique_id : id
-    });
-  });
-
-  // res.render('index', {
-  //   response : JSON.stringify(response),
-  //   unique_id : id
-  // });
+      res.render('index', {
+        response: JSON.stringify(crawl),
+        topic: String(crawl.topic),
+        location: String(crawl.location),
+        stops: parseInt(crawl.stops),
+        unique_id: crawl.id
+      });
+    }
+  })
 });
 
 module.exports = router;
