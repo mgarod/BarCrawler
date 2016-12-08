@@ -33,9 +33,9 @@ router.post('/submit', function(req, res, next) {
       // console.log("generateCrawl response:", response);
       res.render('index', {
         response : JSON.stringify(response),
-        topic: response.topic,
-        location: response.location,
-        stops: parseInt(response.stops),
+        topic: req.body.top,
+        location: req.body.loc,
+        stops: req.body.sto,
         unique_id : response.unique_id
       });
     }).catch(function(err) { // failure
