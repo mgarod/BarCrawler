@@ -46,27 +46,30 @@ router.post('/submit', function(req, res, next) {
 
 router.get('/:id', function(req, res, next) {
   var id = req.params.id;
+  if (id === null) {
+    next();
+  } else {
+    Crawl.findOne({'id': id}, function(err, crawl){
+      if (err) {
+        console.log("ERROR:", err);
+        return;
+      } else {
+        // console.log("CRAWL:", crawl);
+        // console.log("CRAWL.TOPIC", crawl.topic);
+        // console.log("CRAWL.LOCATION", crawl.location);
+        // console.log("CRAWL.STOPS", crawl.stops);
+        // console.log("CRAWL.id", crawl.id);
 
-  Crawl.findOne({'id': id}, function(err, crawl){
-    if (err) {
-      console.log("ERROR:", err);
-      return;
-    } else {
-      // console.log("CRAWL:", crawl);
-      // console.log("CRAWL.TOPIC", crawl.topic);
-      // console.log("CRAWL.LOCATION", crawl.location);
-      // console.log("CRAWL.STOPS", crawl.stops);
-      // console.log("CRAWL.id", crawl.id);
-
-      res.render('index', {
-        response: JSON.stringify(crawl),
-        topic: String(crawl.topic),
-        location: String(crawl.location),
-        stops: parseInt(crawl.stops),
-        unique_id: "Link to this crawl: http://localhost:3000/"+crawl.id
-      });
-    }
-  })
+        res.render('index', {
+          response: JSON.stringify(crawl),
+          topic: String(crawl.topic),
+          location: String(crawl.location),
+          stops: parseInt(crawl.stops),
+          unique_id: "Link to this crawl: http://localhost:3000/"+crawl.id
+        });
+      }
+    })
+  }
 });
 
 module.exports = router;
