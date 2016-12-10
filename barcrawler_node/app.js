@@ -61,9 +61,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-// app.set('port', process.env.PORT || 3000);
-// app.set('host', process.env.HOST || '127.0.0.1');
-// app.listen(app.get('port'), app.get('host'), function() {
-//   console.log("Listening on port: ", app.get('port'));
-// });
 module.exports = app;
