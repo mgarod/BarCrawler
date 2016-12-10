@@ -3,10 +3,11 @@ var router = express.Router();
 var apigClientFactory = require('aws-api-gateway-client');
 var mongoose = require('mongoose');
 var Crawl = require('../models/Crawl');
+var credentials = require('../credentials.js');
 
 var apigClient = apigClientFactory.newClient({
   invokeUrl: 'https://l6l6cm3bfi.execute-api.us-east-1.amazonaws.com/prod',
-  apiKey: 'cRokobNRQi7UpOpIB1Ns978IXIEfHN1J2Gz8V1Vd'
+  apiKey: process.env.apigkey || credentials.apigkey
 });
 
 
@@ -53,7 +54,7 @@ router.get('/:id', function(req, res, next) {
       if (err) {
         console.log("ERROR:", err);
         return;
-      } else {
+      } else if (crawl) {
         // console.log("CRAWL:", crawl);
         // console.log("CRAWL.TOPIC", crawl.topic);
         // console.log("CRAWL.LOCATION", crawl.location);
@@ -66,6 +67,10 @@ router.get('/:id', function(req, res, next) {
           location: String(crawl.location),
           stops: parseInt(crawl.stops),
           unique_id: "Link to this crawl: http://localhost:3000/"+crawl.id
+        });
+      } else {
+        res.render('index', {
+          unique_id: "ERROR"
         });
       }
     })

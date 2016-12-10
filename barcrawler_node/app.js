@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var credentials = require('./credentials.js');
-mongoose.connect(credentials.mongo.development.connectionString);
+mongoose.connect(process.env.MLAB || credentials.mongo.development.connectionString);
 var db = mongoose.connection;
 
 // Routes
