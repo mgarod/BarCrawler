@@ -119,7 +119,8 @@
                             
                         </fieldset>
                     </form>
-                    <h3 class="section-subheading text-muted">{{unique_id}}</h3>
+                    <h3 class="section-subheading text-muted">{{unique_id}}
+                    </br></br>{{{crawlUrl}}}</h3>
                 </div>
             </div>
             <div class="row" align="center">

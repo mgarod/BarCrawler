@@ -61,7 +61,7 @@ router.get('/:id', function(req, res, next) {
           topic: String(crawl.topic),
           location: String(crawl.location),
           stops: parseInt(crawl.stops),
-          unique_id: "Your Crawl code: "+response.unique_id,
+          unique_id: "Your Crawl Code: "+crawl.id,
           crawlUrl: crawlUrl
         });
       } else {
