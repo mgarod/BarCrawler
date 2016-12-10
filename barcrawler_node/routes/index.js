@@ -37,7 +37,7 @@ router.post('/submit', function(req, res, next) {
         topic: req.body.top,
         location: req.body.loc,
         stops: req.body.sto,
-        unique_id : "Link to this crawl: http://localhost:3000/"+response.unique_id
+        unique_id: "Link to this crawl: http://" + req.headers.host + response.unique_id
       });
     }).catch(function(err) { // failure
       console.log("generateCrawl caught an exception:", err);
@@ -66,7 +66,7 @@ router.get('/:id', function(req, res, next) {
           topic: String(crawl.topic),
           location: String(crawl.location),
           stops: parseInt(crawl.stops),
-          unique_id: "Link to this crawl: http://localhost:3000/"+crawl.id
+          unique_id: unique_id: "Link to this crawl: http://" + req.headers.host + req.url
         });
       } else {
         res.render('index', {
