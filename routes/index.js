@@ -3,7 +3,10 @@ var router = express.Router();
 var apigClientFactory = require('aws-api-gateway-client');
 var mongoose = require('mongoose');
 var Crawl = require('../models/Crawl');
-var credentials = require('../credentials.js');
+
+if (!process.env.apigkey) {
+  var credentials = require('../credentials.js');
+}
 
 var apigClient = apigClientFactory.newClient({
   invokeUrl: 'https://l6l6cm3bfi.execute-api.us-east-1.amazonaws.com/prod',
