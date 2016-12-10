@@ -23,23 +23,23 @@ router.post('/submit', function(req, res, next) {
    'location': req.body.loc,
    'stops': req.body.sto
   };
-  // console.log("params: ", params);
   
   var pathTemplate = '/generatecrawl';
   var method = 'GET';
 
   apigClient.invokeApi(params, pathTemplate, method)
-    .then(function(result) { // success
+    .then(function(result) { // on success
       response = result.data;
-      // console.log("generateCrawl response:", response);
+      var crawlUrl = "<a href=\"http://"+req.headers.host+"/"+response.unique_id+"\">Share your crawl with this link!</a>";
       res.render('index', {
         response : JSON.stringify(response),
         topic: req.body.top,
         location: req.body.loc,
         stops: req.body.sto,
-        unique_id: "Link to this crawl: http://" + req.headers.host + response.unique_id
+        unique_id: "Your Crawl code: "+response.unique_id,
+        crawlUrl: crawlUrl
       });
-    }).catch(function(err) { // failure
+    }).catch(function(err) { // on failure
       console.log("generateCrawl caught an exception:", err);
   });
 });
@@ -55,18 +55,14 @@ router.get('/:id', function(req, res, next) {
         console.log("ERROR:", err);
         return;
       } else if (crawl) {
-        // console.log("CRAWL:", crawl);
-        // console.log("CRAWL.TOPIC", crawl.topic);
-        // console.log("CRAWL.LOCATION", crawl.location);
-        // console.log("CRAWL.STOPS", crawl.stops);
-        // console.log("CRAWL.id", crawl.id);
-
+        var crawlUrl = "<a href=\"http://"+req.headers.host+"/"+req.url+"\">Share your crawl with this link!</a>";
         res.render('index', {
           response: JSON.stringify(crawl),
           topic: String(crawl.topic),
           location: String(crawl.location),
           stops: parseInt(crawl.stops),
-          unique_id: unique_id: "Link to this crawl: http://" + req.headers.host + req.url
+          unique_id: "Your Crawl code: "+response.unique_id,
+          crawlUrl: crawlUrl
         });
       } else {
         res.render('index', {

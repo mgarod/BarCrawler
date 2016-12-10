@@ -15,7 +15,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- PureIO -->
-    <link href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" rel="stylesheet">
+    <link href="css/pure-min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -238,19 +238,6 @@
     <!-- Homemade Javascript -->
     <script type="text/javascript" src="js/api_lambda.js"></script>
     <script type="text/javascript" src="js/googlemaps.js"></script>    
-
-    <!-- AWS Libraries -->
-    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
-    <script type="text/javascript" src="lib/url-template/url-template.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
-    <script type="text/javascript" src="lib/apigClient.js"></script>
 </body>
 
 </html>
