@@ -1,8 +1,8 @@
 # BarCrawler
 
-[Website](http://barcrawler.com.s3-website-us-east-1.amazonaws.com)
+Link to live site [BarCrawler](http://barcrawler2016.herokuapp.com)
 
-Given a location and a search term, we will make you a customizable tour of the neighborhood to find the hottest spots.
+Given a location and a search term, we will make you a tour of the neighborhood hitting the hottest spots.
 
 ## Contributors
 
@@ -10,7 +10,7 @@ Given a location and a search term, we will make you a customizable tour of the 
 
 ![alt text](https://github.com/mgarod/mgarod.github.io/blob/master/images/self.png)
 
-Michael has been working as a Computer science and tutor at Hunter College for 2 years, and has recently completed a summer with Barclays as a Technology Analyst. Before that, he was a research assistant for Professor Carsten Kessler at Hunter College studying Wikipedia's role in geography theory. Michael has a passion for databases and big data technologies, cloud computing with AWS, and the elegance of Python.
+Michael has been working as a Computer science tutor at Hunter College for 2 years, and has recently completed a summer with Barclays as a Technology Analyst. Before that, he was a research assistant for Professor Carsten Kessler at Hunter College studying Wikipedia's role in geography theory. Michael has a passion for databases and big data technologies, cloud computing with AWS, and the elegance of Python.
 
 [Igor Gluskin](http://github.com/igorgluskin)
 
@@ -30,6 +30,9 @@ Return: JSON. All strings are unicode
 ```
 {
   "unique_id": string (8-digit hexadecimal),
+  "topic" : string,
+  "location" : string,
+  "stops" : integer,
   "venues" : {
     'venue1name': {
           "verified"      : boolean
