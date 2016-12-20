@@ -103,7 +103,7 @@
 
                             <div class="pure-control-group">
                                 <label for="sto">Number of Stops</label>
-                                <input id="sto" name="sto" type="number" placeholder="How many? (12 max)" value="{{stops}}" required>
+                                <input id="sto" name="sto" type="number" placeholder="How many? (10 max)" value="{{stops}}" required>
                             </div>
 
                             <div class="pure-controls">
